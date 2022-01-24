@@ -18,15 +18,21 @@ export default function header(props) {
         </li>
       
       </ul>
-      <form className="d-flex">
+      {props.searchBar? <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
         <button className="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </form>: ""}
     </div>
   </div>
 </nav>;
 }
 
+header.defaultProps = {
+  title : "Your title here",
+  searchBar: true,
+}
+
 header.propTypes = {
-    title: PropTypes.string
+    title: PropTypes.string,
+    searchBar: PropTypes.bool.isRequired
 }
