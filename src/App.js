@@ -1,15 +1,15 @@
-  import './App.css';
+import './App.css';
 import HEADER from './MyComponents/header';
 import {Todos} from './MyComponents/Todos';
 import {Footer} from './MyComponents/Footer';
+import {Addtodo} from './MyComponents/Addtodo';
 import React, { useState } from 'react';
-
-
 function App() {
   const onDelete = (todo) => {
     console.log("I am on delete of todo", todo);
     setTodos(todos.filter((e)=>{
-      return e!==todo;
+        return e!==todo;
+      
     }));
   }
   const [todos, setTodos] = useState([
@@ -32,6 +32,7 @@ function App() {
   return (
     <>
       <HEADER title="My Todo's List" searchBar={false} />
+      <Addtodo></Addtodo>
       <Todos todos={todos} onDelete={onDelete}/>
       <Footer />
     </>
