@@ -9,8 +9,11 @@ export const Addtodo = (props) => {
         e.preventDefault();
         if(!title || !desc){
             alert('title and description can not be blanked ');
+            return;
         }
         props.addTodo(title, desc);
+        setTitle('');
+        setDesc('');
     }
     
     return (
